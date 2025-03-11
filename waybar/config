@@ -1,0 +1,88 @@
+{
+	"layer": "top",
+    "width": 1800,
+    "margin-top": 5,
+    "margn-bottom": 0,
+
+    //Modules layout
+
+	"modules-left": ["custom/launcher","custom/updates"],
+	"modules-center": ["hyprland/workspaces"],
+	"modules-right": ["clock","pulseaudio","custom/power"],
+	
+
+    // Sourced modules
+
+	"pulseaudio": {
+		"tooltip": false,
+		"scroll-step": 5,
+		"format": "<span color='#c2bffd' font='17'></span> {icon}",
+		"format-muted": "<span color='#c2bffd' font='17'></span> <span color='#ff0000' font='20'>󰝟 </span>",
+		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"format-icons": {
+			"default": [
+                "<span color='#c2bffd' font='12'> </span>", 
+                "<span color='#c2bffd' font='17'> </span>", 
+                "<span color='#c2bffd' font='20'> </span>"
+            ]
+		}
+	},
+    "hyprland/workspaces": {
+		"disable-scroll": true,
+        "on-click": "activate",
+        "all-outputs": true,
+        "active-only": false,
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+	    "7": [],
+	    "8": [],
+	    "9": [],
+        },
+        "format": "  {icon}  ",
+        "format-icons": {
+            "active": "<span font='17'>󰮯</span>",
+            "empty": "<span font='10'></span>",
+            "persistent": "<span font='17'>󰊠</span>",
+        },
+    },
+	"clock": {
+        "tooltip": true,
+        "interval": 60,
+        "format": "{:%H:%M %p}",
+        "tooltip-format": "{:%Y-%m-%d}",
+    },
+    "custom/media": {
+        "interval": 30,
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 20,
+        "format-icons": {
+            "spotify": " ",
+            "default": " "
+        },
+        "escape": true,
+        "exec": "$HOME/.config/system_scripts/mediaplayer.py 2> /dev/null",
+        "on-click": "playerctl play-pause"
+    },
+    "custom/launcher":{
+        "format": "<span color='#ff0000' font='16'></span>",
+        "on-click": "rofi -show drun",
+        "on-click-right": "killall rofi"
+    },
+    "custom/power":{
+        "format": "<span color='#ff0000' font='17'>⏻</span>",
+        "on-click": "wlogout",
+    },
+    "custom/updates":{
+        "format": "<span color='#c2bffd' font='17'></span> {} Packages <span font='19' color='#c2bffd'>󰏖</span>",
+        "exec": "pacman -Qu | wc -l",
+        "exec-if": "[[ $(pacman -Qu | wc -l ) != 0 ]]",
+        "interval": 15,
+        "on-click": "kitty -e pacman -Syu && notify-send 'The system has been updated' "
+    }
+}

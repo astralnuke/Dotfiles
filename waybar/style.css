@@ -1,0 +1,122 @@
+* {
+    	font-family: "MesloLGS NF";
+}
+
+window#waybar {
+	background-color: transparent;
+	border: 0px solid #c2bffd;
+}
+
+#window {
+	transition: none;
+    	color: transparent;
+	background: transparent;
+}
+
+#workspaces { 
+	border-radius: 8px;
+	background: transparent;
+	transition: none;
+	border: 0px solid #c2bffd;
+        padding: 3px 5px; 
+}
+
+#workspaces button {
+	transition: none;
+	color: #c2bffd;
+	background: transparent;
+}
+
+#workspaces button.persistent {
+    transition: none;
+    color: #c2bffd;
+    background: transparent;
+    font-size: 3px;
+}
+
+#workspaces button.empty {
+	color: #f1e7cc;
+    font-size: 3px;
+    transition: none;
+    background: transparent;
+}
+
+#workspaces button.active {
+	transition: none;
+	color: #ff0000;
+	background: transparent;
+	font-size: 4px;
+}
+
+#pulseaudio {
+	margin-left: 2px;
+	padding-left: 2px;
+	padding-right: 0px;
+	border-radius: 18px;
+    font-size: 16px;
+    font-weight: bold;
+	transition: none;
+	color: #f1e7cc;
+	background: transparent;
+}
+
+@keyframes blink {
+    to {
+        color: #B5E8E0;
+    }
+}
+
+#clock {
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 18px;
+	transition: none;
+    font-size: 16px;
+    font-weight: bold;
+	color: #f1e7cc;
+	background: transparent;
+}
+
+#custom-launcher {
+	font-size: 18px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 5px;
+	border-radius: 10px;
+	transition: none;
+    color: #f1e7cc;
+    background: transparent;
+}
+
+#custom-power {
+	margin-left: 4px;
+	padding-left: 4px;
+	padding-right: 15px;
+	border-radius: 18px;
+    margin-right: 10px;
+    font-size: 14px;
+    font-weight: bold;
+	transition: none;
+	color: #F1F1F1;
+	background: transparent;
+}
+
+#custom-updates {
+	margin: -2px 0 0px 10px;
+	padding-right: 10px;
+	transition: none;
+	color: #f1e7cc;
+	background: transparent;
+	font-size: 18px;
+}
+
+#custom-media {
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 10px;
+	transition: none;
+	color: #f1e7cc;
+	background: #222222;
+}
